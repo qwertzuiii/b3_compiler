@@ -1,0 +1,7 @@
+{
+    "$file": "C:/PATH/TO/main.py",
+    "$name": "b3_compiler",
+    "$icon": "NONE",
+    "$add-data": ["C:/PATH/TO/src/SCRIPTS/;src/SCRIPTS/", "C:/PATH/TO/src/SCRIPTS_UI/;src/SCRIPTS_UI/"],
+    "$seeconsole": false
+}

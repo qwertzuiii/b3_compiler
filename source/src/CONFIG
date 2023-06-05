@@ -1,0 +1,3 @@
+"ui:main" = "src/FILE_UI/main.ui"
+"ui:compiler" = "src/FILE_UI/compiler.ui"
+"default:key" = "src/BASE"
