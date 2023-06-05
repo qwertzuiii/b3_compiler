@@ -68,7 +68,7 @@ class MainApp(QMainWindow, QWidget):
             return print('No file selected')
 
         self.line_file_path.setText(path)
-        orig_file = s_compiler._replace_file_extension(path, '.original')
+        orig_file = s_compiler._replace_file_extension(path, '.backup')
         self.line_orig_path.setText(orig_file)
 
     
