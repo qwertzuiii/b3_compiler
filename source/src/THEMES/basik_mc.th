@@ -79,10 +79,11 @@ QRadioButton::indicator:checked {
 
 /* CHECKBOX */
 QCheckBox::indicator {
-	border: 2px solid $primary_t;
+	border: 2px solid $border_color;
 }
 QCheckBox::indicator:checked {
-	background-color: $primary_t_lighter;
+    border-color: $border_color_disabled;
+	background-color: $border_color;
 }
 
 /* SLIDER */
