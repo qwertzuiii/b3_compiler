@@ -1,3 +1,8 @@
 "ui:main" = "src/FILE_UI/main.ui"
 "ui:compiler" = "src/FILE_UI/compiler.ui"
 "default:key" = "src/BASE"
+
+"theme:enabled" = true
+"theme:list" = "src/THEMES/list.json"
+"theme:folder" = "src/THEMES/"
+"theme:defaultindex" = 0

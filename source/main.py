@@ -1,6 +1,6 @@
 import tomllib
 
-# Load config
+# - Load config
 cfg = tomllib.loads(open('src/CONFIG', 'r').read())
 
 
@@ -9,9 +9,18 @@ from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5 import uic
 from PyQt5.QtCore import pyqtSignal, pyqtSlot
 
-# Importing scripts (for building process, or they won't be able to load correctly)
+# - Importing scripts (for building process, or they won't be able to load correctly)
 from src.SCRIPTS import script_compiler as s_compiler
 from src.SCRIPTS_UI import ui_compiler
+from src.SCRIPTS import script_styler as s_styler
+from json import loads as jsn
+
+# - Set style for other windows and main window
+if cfg['theme:enabled']:
+    themelist = jsn(open(cfg['theme:list'], 'r').read())
+    style = s_styler._convert_stylesheet(themelist, cfg['theme:folder'], cfg['theme:defaultindex'])
+else:
+    style = ''
 
 class MainApp(QMainWindow, QWidget):
     def __init__(self):
@@ -34,7 +43,7 @@ class MainApp(QMainWindow, QWidget):
         self._load_ui(self.decomp_or_comp, self.key)
 
     def _load_ui(self, v, key):
-        self.compile_ui = ui_compiler.MainApp(cfg['ui:compiler'], v, key)
+        self.compile_ui = ui_compiler.MainApp(cfg['ui:compiler'], v, key, style)
 
         self.compile_ui.show()
         self.close()
@@ -53,6 +62,8 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     appMain = MainApp()
     appMain.show()
+
+    appMain.setStyleSheet(style)
 
     try:
         sys.exit(app.exec_())

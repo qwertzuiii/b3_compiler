@@ -11,10 +11,14 @@ from src.SCRIPTS import script_compiler as s_compiler
 class MainApp(QMainWindow, QWidget):
     signal_back = pyqtSignal(str)
 
-    def __init__(self, ui_file, decomp_or_comp, key):
+    def __init__(self, ui_file, decomp_or_comp, key, style=''):
         super().__init__()
         uic.loadUi(ui_file, self)  # ui file load
         #self.setWindowIcon()  # Icon Loading
+
+        # Set style
+        self.setStyleSheet(style)
+
         self.v = decomp_or_comp
         self.base_k = key
 
