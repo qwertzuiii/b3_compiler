@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5 import uic
-from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtCore import pyqtSignal, Qt
 import easygui
 import threading
 
@@ -22,6 +22,13 @@ class MainApp(QMainWindow, QWidget):
         self.v = decomp_or_comp
         self.base_k = key
 
+        # - Set titlebar transparent
+        self.set_titlebar_transparent()
+
+        # - Make custom titlebar moveable
+        self.titlebar_frame.mouseMoveEvent = self.MoveWindow
+
+        self.quit_button.clicked.connect(self.close)
         self.btn_file_browse.clicked.connect(self._file_browse)
         self.chb_backup.stateChanged.connect(self._change_line_state)
         self.pushButton.clicked.connect(self._startTHREAD)
@@ -39,6 +46,23 @@ class MainApp(QMainWindow, QWidget):
             self.chb_backup
         ]
 
+    def MoveWindow(self, event):
+        if event.buttons() == Qt.LeftButton:
+            if self.isMaximized() == False:
+                self.move(self.pos() + event.globalPos() - self.dragPos)
+                self.dragPos = event.globalPos()
+                event.accept()
+                pass
+
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+        pass
+
+    def set_titlebar_transparent(self):
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        #self.setAttribute(Qt.WA_TranslucentBackground)
+        #self.setStyleSheet("background:transparent;")
+
     def _go_back(self):
         self.signal_back.emit('back')
         self.close()
@@ -48,10 +72,12 @@ class MainApp(QMainWindow, QWidget):
             self.pushButton.setText('Compile')
             self.setWindowTitle('Compile Menu')
             self.label_head.setText('Compile Menu')
+            self.label_head_2.setText('Compile Menu')
         else:
             self.pushButton.setText('Decompile')
             self.setWindowTitle('Decompile Menu')
             self.label_head.setText('Decompile Menu')
+            self.label_head_2.setText('Decompile Menu')
 
     def __setInteraction(self, bool):
         for item in self.interaction_list:
