@@ -9,7 +9,7 @@ QMainWindow {
 /* FRAME */
 QFrame {
     border: 2px solid $border_color;
-    border-radius: $roundval;
+    
 }
 QFrame#titlebar_frame {
     background-color: rgba(53, 53, 53, 240);
@@ -24,7 +24,7 @@ QLabel {
 QPushButton {
     background-color: $primary_t;
     border: 2px solid $border_color;
-    border-radius: $roundval;
+    
 }
 QPushButton:disabled {
     background-color: $primary_t_lighter;
@@ -50,7 +50,7 @@ QPushButton#quit_button::hover:pressed {
 QLineEdit {
     border: 2px solid $border_color;
     background-color: $primary_t_lighter;
-    border-radius: $roundval;
+    
 }
 QLineEdit:disabled {
     background-color: $primary_t_lighterr;
@@ -61,7 +61,7 @@ QLineEdit:disabled {
 QComboBox {
     border: 2px solid $border_color;
     background-color: $primary_t;
-    border-radius: $roundval;
+    
 }
 QComboBox::hover {
     background-color: $primary_t_lighter;
@@ -70,14 +70,14 @@ QComboBox::hover {
 /* GROUPBOX */
 QGroupBox {
     border: 2px solid $primary_t_lighter;
-    border-radius: $roundval;
+    
 }
 
 /* RADIO BUTTON */
 QRadioButton::indicator {
     border-radius: 6px;
 	border: 2px solid $primary_t;
-    border-radius: $roundval;
+    
 }
 QRadioButton::indicator:checked {
 	background-color: $primary_t_lighter;
@@ -86,7 +86,7 @@ QRadioButton::indicator:checked {
 /* CHECKBOX */
 QCheckBox::indicator {
 	border: 2px solid $border_color;
-    border-radius: $roundval;
+    
 }
 QCheckBox::indicator:checked {
     border-color: $border_color_disabled;
@@ -99,7 +99,7 @@ QSlider::groove:horizontal {
     height: 10px;
     margin: 0px;
     background-color: $secondary_t;
-    border-radius: $roundval;
+    
 }
 QSlider::groove:horizontal::hover {
     background-color: $secondary_t_lighter;
@@ -109,14 +109,14 @@ QSlider::handle:horizontal {
     width: 10px;
     height: 5px;
     margin: -30px 0;
-    border-radius: $roundval;
+    
 }
 QSlider::groove:vertical {
     border: 0px solid;
     width: 10px;
     margin: 0px;
     background-color: $secondary_t;
-    border-radius: $roundval;
+    
 }
 QSlider::groove:vertical::hover {
     background-color: $secondary_t_lighter;
@@ -126,7 +126,7 @@ QSlider::handle:vertical {
     width: 5px;
     height: 10px;
     margin: 0 -30px;
-    border-radius: $roundval;
+    
 }
 
 /* PROGRESS BAR */
@@ -134,11 +134,11 @@ QProgressBar {
     border: 2px solid $primary_t;
     background-color: $primary_t;
     color: $primary_t;
-    border-radius: $roundval;
+    
 }
 
 QProgressBar::chunk {
     background-color: $border_color;
     color: $border_color;
-    border-radius: $roundval;
+    
 }
