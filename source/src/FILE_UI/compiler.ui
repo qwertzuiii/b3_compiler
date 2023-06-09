@@ -10,6 +10,18 @@
     <height>142</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>580</width>
+    <height>142</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>580</width>
+    <height>142</height>
+   </size>
+  </property>
   <property name="font">
    <font>
     <pointsize>8</pointsize>
