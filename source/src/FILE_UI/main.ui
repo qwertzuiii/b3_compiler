@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>261</width>
-    <height>122</height>
+    <height>144</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>261</width>
-    <height>122</height>
+    <height>144</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>261</width>
-    <height>122</height>
+    <height>144</height>
    </size>
   </property>
   <property name="font">
@@ -35,7 +35,7 @@
     <property name="geometry">
      <rect>
       <x>-10</x>
-      <y>40</y>
+      <y>60</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -53,7 +53,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>80</y>
+      <y>100</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -71,7 +71,7 @@
     <property name="geometry">
      <rect>
       <x>-1</x>
-      <y>10</y>
+      <y>30</y>
       <width>261</width>
       <height>21</height>
      </rect>
@@ -88,6 +88,58 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="titlebar_frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_head_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>b3-compiler - by PanDev</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="quit_button">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>0</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X</string>
     </property>
    </widget>
   </widget>

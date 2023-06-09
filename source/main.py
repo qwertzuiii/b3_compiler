@@ -7,7 +7,7 @@ cfg = tomllib.loads(open('src/CONFIG', 'r').read())
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5 import uic
-from PyQt5.QtCore import pyqtSignal, pyqtSlot
+from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt
 
 # - Importing scripts (for building process, or they won't be able to load correctly)
 from src.SCRIPTS import script_compiler as s_compiler
@@ -31,8 +31,32 @@ class MainApp(QMainWindow, QWidget):
         self.key = cfg['default:key']
         self.key = open(self.key, 'rb').read()
 
+        # - Make titlebar transparent
+        self.set_titlebar_transparent()
+
+        # - Make custom titlebar moveable
+        self.titlebar_frame.mouseMoveEvent = self.MoveWindow
+
         self.btn_compile.clicked.connect(self._set_compile)
         self.btn_decompile.clicked.connect(self._set_decompile)
+        self.quit_button.clicked.connect(self.close) # Title bar close button
+
+    def MoveWindow(self, event):
+        if event.buttons() == Qt.LeftButton:
+            if self.isMaximized() == False:
+                self.move(self.pos() + event.globalPos() - self.dragPos)
+                self.dragPos = event.globalPos()
+                event.accept()
+                pass
+
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+        pass
+
+    def set_titlebar_transparent(self):
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        #self.setAttribute(Qt.WA_TranslucentBackground)
+        #self.setStyleSheet("background:transparent;")
 
     def _set_compile(self):
         self.decomp_or_comp = 0
