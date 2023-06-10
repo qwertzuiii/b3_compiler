@@ -16,6 +16,7 @@ Just [download](https://github.com/qwertzuiii/b3_compiler/archive/refs/heads/mai
 - Folder: `src/SCRIPTS/` - There are scripts in this folder.
 - Folder: `src/SCRIPTS_UI/` - There are the UI load files to load the UI and set functions to buttons, etc. .
 - Folder: `src/FILE_UI/` - There are the UI files to set the positions of the objects, width, etc. .
+- Folder: `src/THEMES/` - There are themes in this folder.
 
 - File: `src/BASE` - This is the default en-/decryption key for `.b3` files.
 - File: `src/CONFIG` - This is the config, to set file paths, etc. .
