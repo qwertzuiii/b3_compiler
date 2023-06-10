@@ -4,6 +4,7 @@ QWidget {
 
 QMainWindow {
     background: $bg_color;
+    border: 2px solid $border_color;
 }
 
 /* FRAME */
