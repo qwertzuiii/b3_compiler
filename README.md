@@ -1,6 +1,6 @@
 <center>
     <h1 align="center">b3 compiler</h1>
-    <p align="center">A (de)compiler **for**/**to make** .b3 files.</p>
+    <p align="center">A (de)compiler <b>for</b>/<b>to make</b> .b3 files.</p>
 </center>
 
 <h2 align="center">How to use it?</h2>
