@@ -3,6 +3,6 @@
 *debug*
 *__pycache__*
 
-source/build/build/
-source/build/dist/
-source/build/b3_compiler.spec
+build/build/
+build/dist/
+build/b3_compiler.spec
