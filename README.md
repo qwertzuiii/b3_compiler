@@ -1,7 +1,12 @@
 <center>
     <h1 align="center">b3 compiler</h1>
     <p align="center">A (de)compiler <b>for</b>/<b>to make</b> .b3 files.</p>
+    <h2 align="center">Current versions:</h2>
+    <p align="center">UI App: <b>v0.4.1</b> <a href="https://github.com/qwertzuiii/b3_compiler/releases/tag/v0.4.1">download</a></p>
+    <p align="center">CMD App: <b>v0.1.0</b> <a href="https://github.com/qwertzuiii/b3_compiler/releases/tag/cmd-v0.1.0">download</a></p>
 </center>
+
+---
 
 <h2 align="center">How to use it?</h2>
 
